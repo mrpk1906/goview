@@ -7,9 +7,9 @@ goview support for echo template v4 version.
 ## Install
 ```bash
 
-go get -u github.com/epikur-io/goview
+go get -u github.com/mrpk1906/goview
 
-go get -u github.com/epikur-io/goview/supports/echoview-v4
+go get -u github.com/mrpk1906/goview/supports/echoview-v4
 
 ```
 
@@ -20,7 +20,7 @@ go get -u github.com/epikur-io/goview/supports/echoview-v4
 package main
 
 import (
-	"github.com/epikur-io/goview/supports/echoview-v4"
+	"github.com/mrpk1906/goview/supports/echoview-v4"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/middleware/v4"
 	"net/http"
@@ -73,13 +73,13 @@ Project structure:
 See in "examples/basic" folder
 ```
 
-[Echo example](https://github.com/epikur-io/goview/tree/master/_examples/echo-v4)
+[Echo example](https://github.com/mrpk1906/goview/tree/master/_examples/echo-v4)
 
 
 
 ## More examples
 
-See [_examples/](https://github.com/epikur-io/goview/blob/master/_examples/) for a variety of examples.
+See [_examples/](https://github.com/mrpk1906/goview/blob/master/_examples/) for a variety of examples.
 
-[GoDoc]: https://godoc.org/github.com/epikur-io/goview/supports/echoview-v4
-[GoDoc Widget]: https://godoc.org/github.com/epikur-io/goview/supports/echoview-v4?status.svg
+[GoDoc]: https://godoc.org/github.com/mrpk1906/goview/supports/echoview-v4
+[GoDoc Widget]: https://godoc.org/github.com/mrpk1906/goview/supports/echoview-v4?status.svg

@@ -7,7 +7,7 @@
 //
 //	import (
 //		"fmt"
-//		"github.com/epikur-io/goview"
+//		"github.com/mrpk1906/goview"
 //		"net/http"
 //	)
 //
@@ -49,19 +49,19 @@
 //			   |--- footer.html
 //			   |--- master.html
 //
-// Learn more at https://github.com/epikur-io/goview
+// Learn more at https://github.com/mrpk1906/goview
 //
 // ================== Supports ==================
 //
 // Ginview for Gin framework:
-// https://godoc.org/github.com/epikur-io/goview/supports/ginview
+// https://godoc.org/github.com/mrpk1906/goview/supports/ginview
 //
 // Echoview for Echo framework:
-// https://godoc.org/github.com/epikur-io/goview/supports/echoview
+// https://godoc.org/github.com/mrpk1906/goview/supports/echoview
 //
 // Gorice for Go.rice:
-// https://godoc.org/github.com/epikur-io/goview/supports/gorice
+// https://godoc.org/github.com/mrpk1906/goview/supports/gorice
 //
 // Examples:
-// https://github.com/epikur-io/goview/_examples
+// https://github.com/mrpk1906/goview/_examples
 package goview

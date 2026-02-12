@@ -7,9 +7,9 @@ goview support for go.rice
 ## Install
 ```bash
 
-go get -u github.com/epikur-io/goview
+go get -u github.com/mrpk1906/goview
 
-go get -u github.com/epikur-io/goview/supports/gorice
+go get -u github.com/mrpk1906/goview/supports/gorice
 
 ```
 
@@ -23,8 +23,8 @@ package main
 import (
 	"fmt"
 	"github.com/GeertJohan/go.rice"
-	"github.com/epikur-io/goview"
-	"github.com/epikur-io/goview/supports/gorice"
+	"github.com/mrpk1906/goview"
+	"github.com/mrpk1906/goview/supports/gorice"
 	"net/http"
 )
 
@@ -85,13 +85,13 @@ Project structure:
 See in "examples/gorice" folder
 ```
 
-[gorice example](https://github.com/epikur-io/goview/tree/master/_examples/gorice)
+[gorice example](https://github.com/mrpk1906/goview/tree/master/_examples/gorice)
 
 
 
 ## More examples
 
-See [_examples/](https://github.com/epikur-io/goview/blob/master/_examples/) for a variety of examples.
+See [_examples/](https://github.com/mrpk1906/goview/blob/master/_examples/) for a variety of examples.
 
-[GoDoc]: https://godoc.org/github.com/epikur-io/goview/supports/gorice
-[GoDoc Widget]: https://godoc.org/github.com/epikur-io/goview/supports/gorice?status.svg
+[GoDoc]: https://godoc.org/github.com/mrpk1906/goview/supports/gorice
+[GoDoc Widget]: https://godoc.org/github.com/mrpk1906/goview/supports/gorice?status.svg

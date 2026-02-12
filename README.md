@@ -10,10 +10,12 @@ Goview is a lightweight, minimalist and idiomatic template library based on gola
 - [Features](#features)
 - [Docs](#docs)
 - [Supports](#supports)
-    - [Gin Framework](https://github.com/epikur-io/goview/tree/master/supports/ginview)
-    - [Iris Framework](https://github.com/epikur-io/goview/tree/master/supports/irisview)
-    - [Echo Framework](https://github.com/epikur-io/goview/tree/master/supports/echoview)
-    - [Go.Rice](https://github.com/epikur-io/goview/tree/master/supports/gorice)
+    - [Gin Framework](https://github.com/mrpk1906/goview/tree/master/supports/ginview)
+    - [Iris Framework](https://github.com/mrpk1906/goview/tree/master/supports/irisview)
+    - [Echo Framework v3](https://github.com/mrpk1906/goview/tree/master/supports/echoview)
+    - [Echo Framework v4](https://github.com/mrpk1906/goview/tree/master/supports/echoview-v4)
+    - [Echo Framework v5](https://github.com/mrpk1906/goview/tree/master/supports/echoview-v5)
+    - [Go.Rice](https://github.com/mrpk1906/goview/tree/master/supports/gorice)
 - [Usage](#usage)
     - [Overview](#overview)
     - [Config](#config)
@@ -35,7 +37,7 @@ Goview is a lightweight, minimalist and idiomatic template library based on gola
 
 ## Install
 ```bash
-go get github.com/epikur-io/goview
+go get github.com/mrpk1906/goview
 ```
 
 
@@ -56,14 +58,16 @@ go get github.com/epikur-io/goview
 
 
 ## Docs
-See <https://www.godoc.org/github.com/epikur-io/goview>
+See <https://www.godoc.org/github.com/mrpk1906/goview>
 
 
 ## Supports
-- **[ginview](https://github.com/epikur-io/goview/tree/master/supports/ginview)** goview for gin framework
-- **[irisview](https://github.com/epikur-io/goview/tree/master/supports/irisview)** goview for Iris framework
-- **[echoview](https://github.com/epikur-io/goview/tree/master/supports/echoview)** goview for echo framework
-- **[gorice](https://github.com/epikur-io/goview/tree/master/supports/gorice)** goview for go.rice
+- **[ginview](https://github.com/mrpk1906/goview/tree/master/supports/ginview)** goview for gin framework
+- **[irisview](https://github.com/mrpk1906/goview/tree/master/supports/irisview)** goview for Iris framework
+- **[echoview](https://github.com/mrpk1906/goview/tree/master/supports/echoview)** goview for echo framework (v3 and below)
+- **[echoview-v4](https://github.com/mrpk1906/goview/tree/master/supports/echoview-v4)** goview for echo framework v4
+- **[echoview-v5](https://github.com/mrpk1906/goview/tree/master/supports/echoview-v5)** goview for echo framework v5
+- **[gorice](https://github.com/mrpk1906/goview/tree/master/supports/gorice)** goview for go.rice
 
 
 ## Usage
@@ -260,7 +264,7 @@ http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
 ## Examples
 
-See [_examples/](https://github.com/epikur-io/goview/blob/master/_examples/) for a variety of examples.
+See [_examples/](https://github.com/mrpk1906/goview/blob/master/_examples/) for a variety of examples.
 
 
 ### Basic example
@@ -270,7 +274,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/epikur-io/goview"
+	"github.com/mrpk1906/goview"
 	"net/http"
 )
 
@@ -318,13 +322,13 @@ Project structure:
 See in "examples/basic" folder
 ```
 
-[Basic example](https://github.com/epikur-io/goview/tree/master/_examples/basic)
+[Basic example](https://github.com/mrpk1906/goview/tree/master/_examples/basic)
 
 
 ### Gin example
 
 ```bash
-go get github.com/epikur-io/goview/supports/ginview
+go get github.com/mrpk1906/goview/supports/ginview
 ```
 
 ```go
@@ -332,7 +336,7 @@ go get github.com/epikur-io/goview/supports/ginview
 package main
 
 import (
-	"github.com/epikur-io/goview/supports/ginview"
+	"github.com/mrpk1906/goview/supports/ginview"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -376,19 +380,19 @@ Project structure:
 See in "examples/basic" folder
 ```
 
-[Gin example](https://github.com/epikur-io/goview/tree/master/_examples/gin)
+[Gin example](https://github.com/mrpk1906/goview/tree/master/_examples/gin)
 
 ### Iris example
 
 ```bash
-$ go get github.com/epikur-io/goview/supports/irisview
+$ go get github.com/mrpk1906/goview/supports/irisview
 ```
 
 ```go
 package main
 
 import (
-	"github.com/epikur-io/goview/supports/irisview"
+	"github.com/mrpk1906/goview/supports/irisview"
 	"github.com/kataras/iris/v12"
 )
 
@@ -430,7 +434,7 @@ Project structure:
 See in "examples/iris" folder
 ```
 
-[Iris example](https://github.com/epikur-io/goview/tree/master/_examples/iris)
+[Iris example](https://github.com/mrpk1906/goview/tree/master/_examples/iris)
 
 
 ### Iris multiple example
@@ -442,8 +446,8 @@ import (
 	"html/template"
 	"time"
 
-	"github.com/epikur-io/goview"
-	"github.com/epikur-io/goview/supports/irisview"
+	"github.com/mrpk1906/goview"
+	"github.com/mrpk1906/goview/supports/irisview"
 	"github.com/kataras/iris/v12"
 )
 
@@ -521,28 +525,35 @@ Project structure:
 See in "examples/iris-multiple" folder
 ```
 
-[Iris multiple example](https://github.com/epikur-io/goview/tree/master/_examples/iris-multiple)
+[Iris multiple example](https://github.com/mrpk1906/goview/tree/master/_examples/iris-multiple)
 
 ### Echo example
 
 Echo <=v3 version:
 ```bash
-go get github.com/epikur-io/goview/supports/echoview
+go get github.com/mrpk1906/goview/supports/echoview
 ```
 
 Echo v4 version:
 
 ```bash
-go get github.com/epikur-io/goview/supports/echoview-v4
+go get github.com/mrpk1906/goview/supports/echoview-v4
 ```
 
+Echo v5 version:
+
+```bash
+go get github.com/mrpk1906/goview/supports/echoview-v5
+```
+
+**Echo v3 Example:**
 
 ```go
 
 package main
 
 import (
-	"github.com/epikur-io/goview/supports/echoview"
+	"github.com/mrpk1906/goview/supports/echoview"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"net/http"
@@ -582,6 +593,56 @@ func main() {
 
 ```
 
+**Echo v5 Example:**
+
+```go
+
+package main
+
+import (
+	"log"
+	"net/http"
+
+	"github.com/mrpk1906/goview/supports/echoview-v5"
+	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v5/middleware"
+)
+
+func main() {
+
+	// Echo instance
+	e := echo.New()
+
+	// Middleware
+	e.Use(middleware.Recover())
+
+	//Set Renderer
+	e.Renderer = echoview.Default()
+
+	// Routes - Note: Echo v5 uses *echo.Context (pointer)
+	e.GET("/", func(c *echo.Context) error {
+		//render with master
+		return c.Render(http.StatusOK, "index", map[string]any{
+			"title": "Index title!",
+			"add": func(a int, b int) int {
+				return a + b
+			},
+		})
+	})
+
+	e.GET("/page", func(c *echo.Context) error {
+		//render only file, must full name with extension
+		return c.Render(http.StatusOK, "page.html", map[string]any{"title": "Page file title!!"})
+	})
+
+	// Start server
+	if err := e.Start(":9090"); err != nil && err != http.ErrServerClosed {
+		log.Fatal(err)
+	}
+}
+
+```
+
 Project structure:
 ```go
 |-- app/views/
@@ -595,8 +656,9 @@ Project structure:
 See in "examples/basic" folder
 ```
 
-[Echo example](https://github.com/epikur-io/goview/tree/master/_examples/echo)
-[Echo v4 example](https://github.com/epikur-io/goview/tree/master/_examples/echo-v4)
+[Echo example](_examples/echo)
+[Echo v4 example](_examples/echo-v4)
+[Echo v5 example](_examples/echo-v5)
 
 
 ### Go-chi example
@@ -606,7 +668,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/epikur-io/goview"
+	"github.com/mrpk1906/goview"
 	"github.com/go-chi/chi"
 	"net/http"
 )
@@ -656,7 +718,7 @@ Project structure:
 See in "examples/basic" folder
 ```
 
-[Chi example](https://github.com/epikur-io/goview/tree/master/_examples/go-chi)
+[Chi example](https://github.com/mrpk1906/goview/tree/master/_examples/go-chi)
 
 
 
@@ -667,7 +729,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/epikur-io/goview"
+	"github.com/mrpk1906/goview"
 	"html/template"
 	"net/http"
 	"time"
@@ -738,7 +800,7 @@ Project structure:
 See in "examples/advance" folder
 ```
 
-[Advance example](https://github.com/epikur-io/goview/tree/master/_examples/advance)
+[Advance example](https://github.com/mrpk1906/goview/tree/master/_examples/advance)
 
 ### Multiple example
 ```go
@@ -750,7 +812,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/epikur-io/goview"
+	"github.com/mrpk1906/goview"
 	"github.com/gin-gonic/gin"
 )
 
@@ -833,13 +895,13 @@ Project structure:
 See in "examples/multiple" folder
 ```
 
-[Multiple example](https://github.com/epikur-io/goview/tree/master/_examples/multiple)
+[Multiple example](https://github.com/mrpk1906/goview/tree/master/_examples/multiple)
 
 
 ### go.rice example
 
 ```bash
-go get github.com/epikur-io/goview/supports/gorice
+go get github.com/mrpk1906/goview/supports/gorice
 ```
 
 ```go
@@ -849,8 +911,8 @@ package main
 import (
 	"fmt"
 	"github.com/GeertJohan/go.rice"
-	"github.com/epikur-io/goview"
-	"github.com/epikur-io/goview/supports/gorice"
+	"github.com/mrpk1906/goview"
+	"github.com/mrpk1906/goview/supports/gorice"
 	"net/http"
 )
 
@@ -911,21 +973,21 @@ Project structure:
 See in "examples/gorice" folder
 ```
 
-[gorice example](https://github.com/epikur-io/goview/tree/master/_examples/gorice)
+[gorice example](https://github.com/mrpk1906/goview/tree/master/_examples/gorice)
 
 ### More examples
 
-See [_examples/](https://github.com/epikur-io/goview/blob/master/_examples/) for a variety of examples.
+See [_examples/](https://github.com/mrpk1906/goview/blob/master/_examples/) for a variety of examples.
 
 
-[GoDoc]: https://godoc.org/github.com/epikur-io/goview
-[GoDoc Widget]: https://godoc.org/github.com/epikur-io/goview?status.svg
+[GoDoc]: https://godoc.org/github.com/mrpk1906/goview
+[GoDoc Widget]: https://godoc.org/github.com/mrpk1906/goview?status.svg
 [Travis]: https://travis-ci.org/foolin/goview
 [Travis Widget]: https://travis-ci.org/foolin/goview.svg?branch=master
-[GoReportCard]: https://goreportcard.com/report/github.com/epikur-io/goview
-[GoReportCard Widget]: https://goreportcard.com/badge/github.com/epikur-io/goview
-[GoCover]: https://goreportcard.com/report/github.com/epikur-io/goview
-[GoCover Widget]: https://goreportcard.com/badge/github.com/epikur-io/goview
+[GoReportCard]: https://goreportcard.com/report/github.com/mrpk1906/goview
+[GoReportCard Widget]: https://goreportcard.com/badge/github.com/mrpk1906/goview
+[GoCover]: https://goreportcard.com/report/github.com/mrpk1906/goview
+[GoCover Widget]: https://goreportcard.com/badge/github.com/mrpk1906/goview
 
 
 ### Todo

@@ -11,9 +11,9 @@ package main
 import (
 	"net/http"
 
-	"github.com/epikur-io/goview/supports/echoview"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	"github.com/mrpk1906/goview/supports/echoview"
 )
 
 func main() {

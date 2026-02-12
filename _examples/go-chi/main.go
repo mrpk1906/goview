@@ -12,8 +12,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/epikur-io/goview"
 	"github.com/go-chi/chi"
+	"github.com/mrpk1906/goview"
 )
 
 func main() {

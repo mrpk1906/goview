@@ -3,7 +3,7 @@ package echoview
 import (
 	"io"
 
-	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v5"
 	"github.com/mrpk1906/goview"
 )
 
@@ -32,17 +32,20 @@ func Default() *ViewEngine {
 }
 
 // Render render template for echo interface
-func (e *ViewEngine) Render(w io.Writer, name string, data any, c echo.Context) error {
+// In Echo v5, the Renderer interface signature changed:
+// Render(c *Context, w io.Writer, templateName string, data any) error
+func (e *ViewEngine) Render(c *echo.Context, w io.Writer, name string, data any) error {
 	return e.RenderWriter(w, name, data)
 }
 
 // Render html render for template
 // You should use helper func `Middleware()` to set the supplied
 // TemplateEngine and make `Render()` work validly.
-func Render(ctx echo.Context, code int, name string, data any) error {
+func Render(ctx *echo.Context, code int, name string, data any) error {
 	if val := ctx.Get(templateEngineKey); val != nil {
 		if e, ok := val.(*ViewEngine); ok {
-			return e.Render(ctx.Response().Writer, name, data, ctx)
+			// In Echo v5, Response() returns http.ResponseWriter directly
+			return e.Render(ctx, ctx.Response(), name, data)
 		}
 	}
 	return ctx.Render(code, name, data)
@@ -56,7 +59,7 @@ func NewMiddleware(config goview.Config) echo.MiddlewareFunc {
 // Middleware echo middleware wrapper
 func Middleware(e *ViewEngine) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
-		return func(c echo.Context) error {
+		return func(c *echo.Context) error {
 			c.Set(templateEngineKey, e)
 			return next(c)
 		}

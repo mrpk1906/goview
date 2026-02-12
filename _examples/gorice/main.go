@@ -13,8 +13,8 @@ import (
 	"net/http"
 
 	rice "github.com/GeertJohan/go.rice"
-	"github.com/epikur-io/goview"
-	"github.com/epikur-io/goview/supports/gorice"
+	"github.com/mrpk1906/goview"
+	"github.com/mrpk1906/goview/supports/gorice"
 )
 
 func main() {

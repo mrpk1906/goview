@@ -13,9 +13,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/epikur-io/goview"
-	"github.com/epikur-io/goview/supports/ginview"
 	"github.com/gin-gonic/gin"
+	"github.com/mrpk1906/goview"
+	"github.com/mrpk1906/goview/supports/ginview"
 )
 
 func main() {

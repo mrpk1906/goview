@@ -10,22 +10,28 @@ package main
 
 import (
 	"html/template"
+	"log"
 	"net/http"
 	"time"
 
-	rice "github.com/GeertJohan/go.rice"
-	"github.com/gin-gonic/gin"
 	"github.com/mrpk1906/goview"
-	"github.com/mrpk1906/goview/supports/ginview"
-	"github.com/mrpk1906/goview/supports/gorice"
+	"github.com/mrpk1906/goview/supports/echoview-v5"
+
+	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v5/middleware"
 )
 
 func main() {
 
-	router := gin.Default()
+	// Echo instance
+	e := echo.New()
+
+	// Middleware
+	// Note: Logger middleware was removed in v5
+	e.Use(middleware.Recover())
 
 	//new template engine
-	basic := gorice.NewWithConfig(rice.MustFindBox("views/frontend"), goview.Config{
+	e.Renderer = echoview.New(goview.Config{
 		Root:      "views/frontend",
 		Extension: ".html",
 		Master:    "layouts/master",
@@ -37,19 +43,19 @@ func main() {
 		},
 		DisableCache: true,
 	})
-	router.HTMLRender = ginview.Wrap(basic)
 
-	router.GET("/", func(ctx *gin.Context) {
-		// `HTML()` is a helper func to deal with multiple TemplateEngine's.
+	e.GET("/", func(ctx *echo.Context) error {
+		// `Render()` is a helper func to deal with multiple TemplateEngine's.
 		// It detects the suitable TemplateEngine for each path automatically.
-		ginview.HTML(ctx, http.StatusOK, "index", gin.H{
+		return echoview.Render(ctx, http.StatusOK, "index", map[string]any{
 			"title": "Frontend title!",
 		})
 	})
 
 	//=========== Backend ===========//
 
-	adminView := gorice.NewWithConfig(rice.MustFindBox("views/backend"), goview.Config{
+	//new middleware
+	mw := echoview.NewMiddleware(goview.Config{
 		Root:      "views/backend",
 		Extension: ".html",
 		Master:    "layouts/master",
@@ -62,19 +68,19 @@ func main() {
 		DisableCache: true,
 	})
 
-	//new middleware
-	mw := ginview.Middleware(ginview.Wrap(adminView))
-
 	// You should use helper func `Middleware()` to set the supplied
-	// TemplateEngine and make `HTML()` work validly.
-	backendGroup := router.Group("/admin", mw)
+	// TemplateEngine and make `Render()` work validly.
+	backendGroup := e.Group("/admin", mw)
 
-	backendGroup.GET("/", func(ctx *gin.Context) {
-		// With the middleware, `HTML()` can detect the valid TemplateEngine.
-		ginview.HTML(ctx, http.StatusOK, "index", gin.H{
+	backendGroup.GET("/", func(ctx *echo.Context) error {
+		// With the middleware, `Render()` can detect the valid TemplateEngine.
+		return echoview.Render(ctx, http.StatusOK, "index", map[string]any{
 			"title": "Backend title!",
 		})
 	})
 
-	router.Run(":9090")
+	// Start server
+	if err := e.Start(":9090"); err != nil && err != http.ErrServerClosed {
+		log.Fatal(err)
+	}
 }

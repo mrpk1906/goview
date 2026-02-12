@@ -14,7 +14,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/epikur-io/goview"
+	"github.com/mrpk1906/goview"
 )
 
 func main() {

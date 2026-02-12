@@ -9,8 +9,8 @@
 package main
 
 import (
-	"github.com/epikur-io/goview/supports/irisview"
 	"github.com/kataras/iris/v12"
+	"github.com/mrpk1906/goview/supports/irisview"
 )
 
 func main() {

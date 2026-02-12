@@ -3,8 +3,8 @@ package echoview
 import (
 	"io"
 
-	"github.com/epikur-io/goview"
 	"github.com/labstack/echo"
+	"github.com/mrpk1906/goview"
 )
 
 const templateEngineKey = "foolin-goview-echoview"

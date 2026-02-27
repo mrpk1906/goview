@@ -39,6 +39,11 @@ func Default() *ViewEngine {
 	return New(goview.DefaultConfig)
 }
 
+// Name returns the name of the view engine.
+func (e *ViewEngine) Name() string {
+	return "goview"
+}
+
 // Load does nothing here, templates are loaded through goview.
 func (e *ViewEngine) Load() error {
 	return nil
